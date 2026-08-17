@@ -23,8 +23,14 @@ The project is inspired by curiosity, learning, personal growth, and the idea of
 - Bootstrap components and responsive design.
 
 ## Screenshots
+### Home Page
 
-Screenshots of the completed website are included below to demonstrate the main sections and features of the project.
+[Keys to the Universe - Home](img1.png)
+
+### Project Sections
+
+[Keys to the Universe - Project](img2.png)
+
 
 ## Future Development Roadmap
 
