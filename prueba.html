@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Llave del Universo - Portafolio</title>
+    <style>
+        :root {
+            --bg-color: #050814;
+            --card-bg: rgba(10, 15, 30, 0.85);
+            --primary-glow: #00d2ff;
+            --accent-gold: #f3c653;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* Barra de navegación */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 8, 20, 0.9);
+        }
+
+        .logo {
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-glow);
+            text-shadow: 0 0 8px rgba(0, 210, 255, 0.6);
+        }
+
+        /* Sección Hero con la imagen integrada */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem 2rem;
+            position: relative;
+            background: linear-gradient(to bottom, rgba(5,8,20,0.8), rgba(5,8,20,0.95));
+        }
+
+        .sacred-number {
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            letter-spacing: 6px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        header h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 30%, var(--primary-glow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+        }
+
+        header p {
+            max-width: 600px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Contenedor de la imagen de Tesla */
+        .tesla-container {
+            margin: 2rem 0;
+            max-width: 450px;
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 210, 255, 0.3);
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.2);
+        }
+
+        .tesla-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .btn-explore {
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--primary-glow);
+            background: transparent;
+            color: var(--primary-glow);
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+            margin-top: 1rem;
+        }
+
+        .btn-explore:hover {
+            background: var(--primary-glow);
+            color: var(--bg-color);
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.6);
+        }
+
+        /* Secciones */
+        section {
+            padding: 6rem 10% 4rem 10%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--accent-gold);
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 210, 255, 0.15);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.25);
+        }
+
+        .project-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(243, 198, 83, 0.2);
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="logo">⚡ 3 • 6 • 9</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#sobre-mi">Sobre Mí</a></li>
+        </ul>
+    </nav>
+
+    <!-- Inicio / Hero con la imagen -->
+    
+   <header id="inicio">
+        <span class="sacred-number">Frecuencia Universal 3 • 6 • 9</span>
+        <h1>La Llave del Universo</h1>
+        <p>«Si conocieras la magnificencia del 3, el 6 y el 9, entonces tendrías la llave del universo.» — Nikola Tesla.</p>
+        <!-- Aquí se muestra tu imagen img3.png con diseño elegante -->
+        <div class="tesla-container">
+            <img src="img3.png" alt="Nikola Tesla y la Frecuencia 3 6 9">
+        </div>
+
+        <a href="#proyectos" class="btn-explore">Desbloquear Contenido</a>
+    </header>
+
+    <!-- Sección de Proyectos -->
+    <section id="proyectos">
+        <h2>Nodos de Desarrollo (Proyectos)</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Proyecto Alfa</h3>
+                <p>Aplicación web diseñada con principios modulares, enfocada en la optimización de flujos de datos.</p>
+            </div>
+            <div class="project-card">
+                <h3>Proyecto Beta</h3>
+                <p>Interfaz interactiva inspirada en patrones geométricos limpios y experiencia de usuario optimizada.</p>
+            </div>
+            <div class="project-card">
+                <h3>Proyecto Gamma</h3>
+                <p>Sistema digital orientado al cálculo y la representación visual de información técnica avanzada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi">
+        <h2>El Creador de la Matriz</h2>
+        <div class="about-content">
+            <p>Bienvenido a mi portafolio. Combino la precisión analítica de la ingeniería con la versatilidad del desarrollo de software moderno.</p>
+            <p>Este sitio web representa el punto de encuentro entre la estructura matemática, la lógica y la creatividad visual.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 - Diseñado bajo la frecuencia de la imaginación.</p>
+    </footer>
+
+</body>
+</html>

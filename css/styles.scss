@@ -1,0 +1,475 @@
+/* GENERAL */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #05070d;
+    color: #333;
+}
+
+
+/* HERO */
+
+.hero-section {
+    background:
+        radial-gradient(circle at 20% 30%, rgba(80, 100, 140, 0.15), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(100, 120, 160, 0.12), transparent 35%),
+        #05070d;
+    color: white;
+    padding: 50px 20px;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+}
+
+
+/* TESLA */
+
+.tesla-section {
+    padding: 50px 20px;
+    background: #03060b;
+}
+
+.tesla-scene {
+    display: flex;
+    align-items: stretch;
+    min-height: 330px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.55);
+}
+
+
+/* TESLA IMAGE */
+
+.tesla-image-container {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    background: #020409;
+}
+
+.tesla-image {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* NUMBERS */
+
+.tesla-number {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #dff6ff;
+    font-size: 3.5rem;
+    font-weight: bold;
+
+    text-shadow:
+        0 0 8px rgba(180, 230, 255, 1),
+        0 0 18px rgba(100, 200, 255, 0.9),
+        0 0 35px rgba(50, 150, 255, 0.7);
+
+    opacity: 0;
+
+    animation-name: descendingNumber;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+
+/* NUMBERS TIMING */
+
+.number-three {
+    top: 0;
+    animation-delay: 0s;
+}
+
+.number-six {
+    top: 0;
+    animation-delay: 1.7s;
+}
+
+.number-nine {
+    top: 0;
+    animation-delay: 3.4s;
+}
+
+
+/* NUMBER ANIMATION */
+
+@keyframes descendingNumber {
+
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40px);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 240px);
+    }
+}
+
+
+/* TESLA QUOTE */
+
+.tesla-quote {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+
+    color: white;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../img4.jfif");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* GALAXY GLOW */
+
+.tesla-quote::after {
+    content: "";
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(90, 130, 190, 0.18),
+            rgba(40, 70, 120, 0.08) 40%,
+            transparent 70%
+        );
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+/* STARS */
+
+.tesla-quote::before {
+    content: "✦   ·   ✧      ·   ✦   ·      ✧   ·   ✦";
+
+    position: absolute;
+
+    top: 25px;
+    left: 0;
+    right: 0;
+
+    color: rgba(220, 235, 255, 0.45);
+
+    letter-spacing: 10px;
+
+    font-size: 0.8rem;
+
+    animation: starsGlow 4s ease-in-out infinite alternate;
+}
+
+
+@keyframes starsGlow {
+
+    from {
+        opacity: 0.35;
+    }
+
+    to {
+        opacity: 0.9;
+    }
+}
+
+
+/* QUOTE */
+
+.quote-content {
+    max-width: 520px;
+
+    opacity: 0;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        quoteAppear 3s ease forwards,
+        quoteGlow 4s ease-in-out 3s infinite alternate;
+
+    animation-delay: 2s, 5s;
+}
+
+
+.quote-content p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    font-style: italic;
+
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.15);
+}
+
+
+.quote-content span {
+    display: block;
+
+    margin-top: 20px;
+
+    font-size: 1rem;
+
+    font-style: normal;
+
+    opacity: 0.8;
+}
+
+
+/* QUOTE APPEAR */
+
+@keyframes quoteAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* QUOTE GLOW */
+
+@keyframes quoteGlow {
+
+    from {
+        text-shadow:
+            0 0 5px rgba(150, 210, 255, 0.15);
+    }
+
+    to {
+        text-shadow:
+            0 0 10px rgba(170, 220, 255, 0.35),
+            0 0 20px rgba(100, 180, 255, 0.15);
+    }
+}
+
+
+/* NUMERICAL KEY */
+
+.numerical-key {
+    padding: 70px 20px;
+    background: #101c2b;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* LEVEL BUTTONS */
+
+.level-button {
+    min-width: 130px;
+}
+
+
+/* QUIZ PATTERN */
+
+.quiz-pattern {
+
+    font-size: 1.8rem;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin: 30px 0;
+
+    text-shadow:
+        0 0 10px rgba(150, 210, 255, 0.4);
+}
+
+
+/* QUIZ MESSAGE */
+
+.quiz-message {
+
+    min-height: 55px;
+
+    margin-top: 20px;
+
+    font-size: 1.05rem;
+}
+
+
+/* CONTENT SECTIONS */
+
+.content-section {
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #05070c,
+            #0b111d
+        );
+
+    color: white;
+}
+
+
+.content-section h2 {
+
+    text-align: center;
+
+    margin-bottom: 15px;
+}
+
+
+.content-section h3 {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.content-section p {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    line-height: 1.8;
+
+    font-size: 1.1rem;
+}
+
+
+/* FOOTER */
+
+.footer {
+
+    background: #010207;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    box-shadow:
+        0 -5px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+.footer p {
+
+    margin: 0;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .tesla-scene {
+
+        flex-direction: column;
+    }
+
+
+    .tesla-image-container,
+    .tesla-quote {
+
+        width: 100%;
+    }
+
+
+    .tesla-image {
+
+        height: 280px;
+        min-height: 280px;
+    }
+
+
+    .tesla-quote {
+
+        min-height: 300px;
+    }
+
+
+    .tesla-number {
+
+        font-size: 2.8rem;
+    }
+
+
+    .hero-section h1 {
+
+        font-size: 2rem;
+    }
+}
+
+/* FIVE KEYS ACCORDION */
+
+#keysAccordion .accordion-item {
+    background-color: #355d7a !important;
+    color: white !important;
+}
+
+#keysAccordion .accordion-button {
+    background-color: #243746 !important;
+    color: white !important;
+}
+
+
+#keysAccordion .accordion-body {
+    background-color: #101c2b !important;
+    color: white !important;
+}
+
+#keysAccordion .accordion-collapse {
+    background-color: #101c2b !important;
+}
+#keysAccordion {
+    border: 6px solid #416f91 !important;
+    border-radius: 12px;
+}
